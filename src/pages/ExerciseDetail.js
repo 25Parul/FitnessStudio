@@ -15,7 +15,7 @@ const ExerciseDetail = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    window.scrollTo({ top: 500, behavior: 'smooth' });
+    window.scrollTo({ top: 500, behavior: "smooth" });
 
     // Fetching allExercisesData from localStorage
     let allExercisesData = JSON.parse(localStorage.getItem("allExercisesData"));
@@ -44,14 +44,17 @@ const ExerciseDetail = () => {
     setExerciseDetail(exerciseDetailDataById);
 
     // Fetching exercises with name from youtube
-    const youTubeSearchUrl = "https://youtube-search-and-download.p.rapidapi.com";
+    const youTubeSearchUrl =
+      "https://youtube-search-and-download.p.rapidapi.com";
     const fetchExerciseVideos = async () => {
       // Fetch exercise videos data from RapidAPI: YouTube Search
       const exerciseVideosData = await fetchData(
-        `${youTubeSearchUrl}/search?query=${exerciseDetailDataById.name} exercise`,youtubeOptions);
-
-        console.log(exerciseVideosData)
+        `${youTubeSearchUrl}/search?query=${exerciseDetailDataById.name} exercise`,
+        youtubeOptions
+      );
+      console.log(exerciseVideosData)
       setExerciseVideos(exerciseVideosData.contents);
+      console.log(exerciseVideos);
     };
 
     fetchExerciseVideos();
@@ -75,7 +78,10 @@ const ExerciseDetail = () => {
   return (
     <Box>
       <Detail exerciseDetail={exerciseDetail} />
-      <ExerciseVideos exerciseVideos ={exerciseVideos} name= {exerciseDetail.name}/>
+      <ExerciseVideos
+        exerciseVideos={exerciseVideos}
+        name={exerciseDetail.name}
+      />
       <SimilarExercises
         targetMuscleExercises={targetMuscleExercises}
         equipmentExercises={equipmentExercises}
