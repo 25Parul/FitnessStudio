@@ -8,8 +8,9 @@ const BodyPart = ({ item, bodyPart, setBodyPart }) => {
     <Stack
       type="button"
       onClick={()=> {
-        setBodyPart(item);
+        setBodyPart(item)
         window.scrollTo({top:1800, left:100, behavior: "smooth"})
+        
       }}
       alignItems="center"
       justifyContent="center"
@@ -25,7 +26,7 @@ const BodyPart = ({ item, bodyPart, setBodyPart }) => {
       }}
 
     >
-      <img src={Icon} atl="dumbbell" style={{width: "40px", height: "40px" }}/>
+      <img src={Icon} alt="dumbbell" style={{width: "40px", height: "40px" }}/>
       <Typography fontSize="24px" fontWeight="bold" color="#3A1212" textTransform="capitalize"> {item} </Typography>
     </Stack>
   );

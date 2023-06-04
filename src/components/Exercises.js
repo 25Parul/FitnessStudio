@@ -2,21 +2,19 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Pagination } from "@mui/material";
 import { Box, Stack, Typography } from "@mui/material";
-
-import { exerciseOptions, fetchData } from "../utils/fetchData";
 import ExerciseCard from "./ExerciseCard";
 
-const Exercises = ({ exercises, setExercises, bodyPart }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const exercisePerPage = 10;
 
+const Exercises = ({ exercises, setExercises, bodyPart, currentPage, setCurrentPage, search }) => {
+  
+  const exercisePerPage = 10;
   const indexOfLastExercise = currentPage * exercisePerPage;
   const indexOfFirstExercise=indexOfLastExercise-exercisePerPage;
   const currentExercise = exercises.slice(indexOfFirstExercise, indexOfLastExercise);
 
   const paginate = (e, value)=>{
     setCurrentPage(value);
-    window.scrollTo({top: 1400, behavior: "smooth"})
+    window.scrollTo({top: 1800, behavior: "smooth"})
 
   }
 
@@ -38,7 +36,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
   return (
     <Box id="exercises" sx={{ mt: { lg: "110px" } }} mt="50px" p="20px">
       <Typography variant="h3" mb="46px">
-        Showing Results
+        Showing Results for {search}
       </Typography>
       <Stack
         direction="row"
@@ -47,7 +45,8 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
         justifyContent="center"
       >
         {currentExercise.map((exercise, index) => (
-            <ExerciseCard key={index} exercise ={exercise} />
+            <ExerciseCard key={index} exercise={exercise}/>
+            
         ))}
       </Stack>
       <Stack mt="100px" alignItems="center">

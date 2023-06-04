@@ -2,8 +2,9 @@ import React, { useEffect, useState }from 'react';
 import {Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { exerciseOptions, fetchData } from '../utils/fetchData';
 import HorizontalScrollbar from "./HorizontalScrollbar";
+import Exercises from './Exercises';
 
-const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
+const SearchExercises = ({setExercises, bodyPart, setBodyPart, setCurrentPage}) => {
     const [search, setSearch] = useState("");
     const [bodyParts, setBodyParts] = useState([]);
   
@@ -50,6 +51,8 @@ const handleSearch = async () => {
         );
     
         setSearch("");
+        console.log("setting current page")
+        setCurrentPage(1)
         setExercises(searchedExercises);
 
         window.scrollTo({ top: 1800, behavior: 'smooth' });

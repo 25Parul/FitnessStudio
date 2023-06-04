@@ -1,6 +1,6 @@
 import React from 'react';
 import "./App.css";
-import {Route, Routes} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Box } from '@mui/material';
 import Navbar from './components/Navbar';
 import Home from "./pages/Home";
@@ -16,6 +16,7 @@ const App = () => {
         <Routes>
             <Route path ="/" element = {<Home />} />
             <Route path ="/exercise/:id" element = {<ExerciseDetail />} />
+            <Route path ="/Home" element= {<Home />} />
         </Routes>
         <Footer />
     </Box>
