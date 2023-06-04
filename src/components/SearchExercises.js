@@ -3,6 +3,7 @@ import {Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { exerciseOptions, fetchData } from '../utils/fetchData';
 import HorizontalScrollbar from "./HorizontalScrollbar";
 import Exercises from './Exercises';
+import BodyPart from './BodyPart';
 
 const SearchExercises = ({setExercises, bodyPart, setBodyPart, setCurrentPage}) => {
     const [search, setSearch] = useState("");
@@ -29,7 +30,6 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart, setCurrentPage}) 
     }, []);
 
 const handleSearch = async () => {
-  
 
     if (search) {
         // Fetching allExercisesData from localStorage
@@ -51,7 +51,6 @@ const handleSearch = async () => {
         );
     
         setSearch("");
-        console.log("setting current page")
         setCurrentPage(1)
         setExercises(searchedExercises);
 

@@ -5,7 +5,8 @@ import { Box, Stack, Typography } from "@mui/material";
 import ExerciseCard from "./ExerciseCard";
 
 
-const Exercises = ({ exercises, setExercises, bodyPart, currentPage, setCurrentPage, search }) => {
+
+const Exercises = ({ exercises, setExercises, bodyPart, currentPage, setCurrentPage }) => {
   
   const exercisePerPage = 10;
   const indexOfLastExercise = currentPage * exercisePerPage;
@@ -15,7 +16,6 @@ const Exercises = ({ exercises, setExercises, bodyPart, currentPage, setCurrentP
   const paginate = (e, value)=>{
     setCurrentPage(value);
     window.scrollTo({top: 1800, behavior: "smooth"})
-
   }
 
 
@@ -35,9 +35,10 @@ const Exercises = ({ exercises, setExercises, bodyPart, currentPage, setCurrentP
 
   return (
     <Box id="exercises" sx={{ mt: { lg: "110px" } }} mt="50px" p="20px">
-      <Typography variant="h3" mb="46px">
-        Showing Results for {search}
-      </Typography>
+<Typography variant="h3" mb="46px">
+  Showing Results
+</Typography>
+
       <Stack
         direction="row"
         sx={{ gap: { lg: "110px", xs: "50px" } }}
@@ -50,7 +51,7 @@ const Exercises = ({ exercises, setExercises, bodyPart, currentPage, setCurrentP
         ))}
       </Stack>
       <Stack mt="100px" alignItems="center">
-        {exercises.length > 10 && (
+        {exercises.length > 1 && (
             <Pagination count={Math.ceil(exercises.length/exercisePerPage)} 
             page={currentPage}
             onChange={paginate}
