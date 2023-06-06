@@ -20,23 +20,6 @@ const ExerciseDetail = () => {
     // Fetching allExercisesData from localStorage
     let allExercisesData = JSON.parse(localStorage.getItem("allExercisesData"));
 
-    const fetchExercisesDataFromAPI = async () => {
-      // Fetch allExercisesData information from RapidAPI: ExerciseDB
-      if (allExercisesData === null) {
-        allExercisesData = await fetchData(
-          "https://exercisedb.p.rapidapi.com/exercises",
-          exerciseOptions
-        );
-        // Saving allExercisesData in localStorage
-        localStorage.setItem(
-          "allExercisesData",
-          JSON.stringify(allExercisesData)
-        );
-      }
-    };
-
-    fetchExercisesDataFromAPI();
-
     // Exercise Detail by Id
     const exerciseDetailDataById = allExercisesData.find(
       (exerciseData) => exerciseData.id.toLowerCase() === id
@@ -52,10 +35,8 @@ const ExerciseDetail = () => {
         `${youTubeSearchUrl}/search?query=${exerciseDetailDataById.name}&sort=relevance`,
         youtubeOptions
       );
-      
-      
-      setExerciseVideos(exerciseVideosData.contents);
 
+      setExerciseVideos(exerciseVideosData.contents);
     };
 
     fetchExerciseVideos();

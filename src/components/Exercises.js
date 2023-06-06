@@ -11,7 +11,7 @@ const Exercises = ({ exercises, setExercises, bodyPart, currentPage, setCurrentP
   const exercisePerPage = 10;
   const indexOfLastExercise = currentPage * exercisePerPage;
   const indexOfFirstExercise=indexOfLastExercise-exercisePerPage;
-  const currentExercise = exercises.slice(indexOfFirstExercise, indexOfLastExercise);
+  const currentExercise = exercises?.slice(indexOfFirstExercise, indexOfLastExercise);
 
   const paginate = (e, value)=>{
     setCurrentPage(value);
