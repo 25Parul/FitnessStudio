@@ -49,7 +49,7 @@ const ExerciseDetail = () => {
     const fetchExerciseVideos = async () => {
       // Fetch exercise videos data from RapidAPI: YouTube Search
       const exerciseVideosData = await fetchData(
-        `${youTubeSearchUrl}/search?query=${exerciseDetailDataById.name}&sort=relevance&maxResults=4`,
+        `${youTubeSearchUrl}/search?query=${exerciseDetailDataById.name}&sort=relevance`,
         youtubeOptions
       );
       
