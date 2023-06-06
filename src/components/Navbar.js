@@ -15,11 +15,11 @@ const Navbar = () => {
       }}
       px="20px"
     >
-      <Link to="/">
+      <Link to="/FitnessStudio/">
         <img src={Logo} alt="Logo" className="img-logo" />
       </Link>
       <Stack direction="row" alignItems="flex-end">
-        <Link to="/Home" className="home">Home</Link>
+        <Link to="/FitnessStudio/" className="home">Home</Link>
         <a className="exercise" href="#exercises">Exercises</a>
       </Stack>
     </Stack>
