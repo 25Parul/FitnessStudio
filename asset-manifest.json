@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/FitnessStudio/static/css/main.d28aa668.css",
-    "main.js": "/FitnessStudio/static/js/main.0aeb09b1.js",
+    "main.js": "/FitnessStudio/static/js/main.22be9286.js",
     "static/media/banner.png": "/FitnessStudio/static/media/banner.5209b5e92a864ca0c615.png",
     "static/media/gym.png": "/FitnessStudio/static/media/gym.6e701417c428e2fbc267.png",
     "index.html": "/FitnessStudio/index.html",
     "main.d28aa668.css.map": "/FitnessStudio/static/css/main.d28aa668.css.map",
-    "main.0aeb09b1.js.map": "/FitnessStudio/static/js/main.0aeb09b1.js.map"
+    "main.22be9286.js.map": "/FitnessStudio/static/js/main.22be9286.js.map"
   },
   "entrypoints": [
     "static/css/main.d28aa668.css",
-    "static/js/main.0aeb09b1.js"
+    "static/js/main.22be9286.js"
   ]
 }
