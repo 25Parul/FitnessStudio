@@ -2,7 +2,7 @@
 
 ## Overview 📝
 
-This readme provides an overview of a fitness app built with React. The app offers a range of features to enhance the fitness experience. Users can explore exercises, access detailed exercise information, watch exercise videos, and discover similar exercises based on target muscle and equipment. The app incorporates a variety of components and pages to provide a comprehensive fitness solution.
+This readme provides an overview of a fitness app built with React. The app offers a range of features to enhance the fitness experience. Users can explore, access detailed  information, watch videos, and discover similar exercises based on target muscle and equipment. The app incorporates a variety of components and pages to provide a comprehensive fitness solution.
 Try my app: [Link to My Fitness App](https://25parul.github.io/FitnessStudio/)
 
 
